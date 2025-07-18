@@ -9,10 +9,10 @@ import java.util.List;
 public class JobSeekerProfile {
 
     @Id
-    private int userAccountId;
+    private Integer userAccountId;
 
     @OneToOne
-    @JoinColumn(name = "user_account_id")
+    @JoinColumn(name = "user_account_id", referencedColumnName = "userId")
     @MapsId
     private Users userId;
 
@@ -38,7 +38,7 @@ public class JobSeekerProfile {
         this.userId = userId;
     }
 
-    public JobSeekerProfile(int userAccountId, String firstName, String lastName, String city, String state, String country, String resume, String employmentType, String workAuthorization, List<Skills> skills, String profilePhoto) {
+    public JobSeekerProfile(Integer userAccountId, String firstName, String lastName, String city, String state, String country, String resume, String employmentType, String workAuthorization, List<Skills> skills, String profilePhoto) {
         this.userAccountId = userAccountId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -52,11 +52,11 @@ public class JobSeekerProfile {
         this.profilePhoto = profilePhoto;
     }
 
-    public int getUserAccountId() {
+    public Integer getUserAccountId() {
         return userAccountId;
     }
 
-    public void setUserAccountId(int userAccountId) {
+    public void setUserAccountId(Integer userAccountId) {
         this.userAccountId = userAccountId;
     }
 
@@ -150,8 +150,8 @@ public class JobSeekerProfile {
 
     @Transient
     public String getPhotosImagePath(){
-        if (profilePhoto == null) return null;
-        return "/photos/jobSeeker/" + userAccountId + "/" + profilePhoto;
+        if (profilePhoto == null || userAccountId == null) return null;
+        return "/photos/candidate/" + userAccountId + "/" + profilePhoto;
     }
 
     @Override
@@ -167,8 +167,8 @@ public class JobSeekerProfile {
                 ", resume='" + resume + '\'' +
                 ", employmentType='" + employmentType + '\'' +
                 ", workAuthorization='" + workAuthorization + '\'' +
-                ", skills=" + skills +
                 ", profilePhoto='" + profilePhoto + '\'' +
                 '}';
     }
+
 }

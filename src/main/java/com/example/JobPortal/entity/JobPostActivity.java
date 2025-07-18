@@ -13,6 +13,7 @@ public class JobPostActivity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer jobPostId;
 
+
     @ManyToOne
     @JoinColumn(name = "postedById", referencedColumnName = "userId")
     private Users postedById;
@@ -93,20 +94,20 @@ public class JobPostActivity {
         this.jobCompanyId = jobCompanyId;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 
-    public Boolean getSaved() {
+    public Boolean getIsSaved() {
         return isSaved;
     }
 
-    public void setSaved(Boolean saved) {
-        isSaved = saved;
+    public void setIsSaved(Boolean IsSaved) {
+        this.isSaved = isSaved;
     }
 
     public String getDescriptionOfJob() {

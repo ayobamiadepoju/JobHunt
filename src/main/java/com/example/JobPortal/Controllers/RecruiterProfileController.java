@@ -44,7 +44,7 @@ public class RecruiterProfileController {
 
             Optional<RecruiterProfile> recruiterProfile =recruiterProfileService.getOne(users.getUserId());
 
-            if (!recruiterProfile.isEmpty()) {
+            if (recruiterProfile.isPresent()) {
              model.addAttribute("profile", recruiterProfile.get());
             }
         }

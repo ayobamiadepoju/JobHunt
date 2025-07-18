@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="">
 <head>
 
 
@@ -44,25 +44,26 @@
             <div class="row">
                 <div class="col-md-4 form-group">
                     <select id="type" th:field="*{jobType}" class="form-control">
-                        <option value="" >Employment Type</option>
-                        <option th:value="Full-time" >Full-time</option>
-                        <option th:value="Part-time" >Part-time</option>
-                        <option th:value="Freelance" >Freelance</option>
-                        <option th:value="Internship" >Internship</option>
+                        <option value="" disabled selected>Employment Type</option>
+                        <option th:value="Full-time">Full-time</option>
+                        <option th:value="Part-time">Part-time</option>
+                        <option th:value="Freelance">Freelance</option>
+                        <option th:value="Internship">Internship</option>
                     </select>
                 </div>
                 <div class="col-md-4 form-group">
                     <select id="remote" th:field="*{remote}" class="form-control">
-                        <option value="">Select a Remote</option>
+                        <option value="" disabled selected>Select Remote Option</option>
                         <option th:value="Remote-Only">Remote-Only</option>
                         <option th:value="Office-Only">Office-Only</option>
-                        <option th:value="Partial-Remote"> Partial-Remote</option>
+                        <option th:value="Partial-Remote">Partial-Remote</option>
                     </select>
                 </div>
                 <div class="col-md-4 form-group">
                     <input id="salary" th:field="*{salary}" type="text" class="form-control" placeholder="Salary">
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12 form-group">
                     <label class="mt-2 heading_font font_sub_heading_color">Description</label>
